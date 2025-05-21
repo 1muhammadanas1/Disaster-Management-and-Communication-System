@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Management and Communication System</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <div class="alert-banner" id="alert-banner">
+        ACTIVE ALERT: Flood Warning in Central District - Evacuate Immediately!
+    </div>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-icon">🚨</span> DisasterResponse
+            </div>
+            <ul class="nav-links">
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#incidents">Incidents</a></li>
+                <li><a href="#report">Report Incident</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <section class="hero">
+            <h1>Disaster Management and Communication System</h1>
+            <p>Our system provides efficient and reliable communication during natural or man-made disasters. We aim to coordinate response efforts, disseminate real-time information to the public, and facilitate quick action by creating a centralized platform that connects emergency services, relief workers, volunteers, and important functionaries to both proven forces and civilians.</p>
+            <a href="#report" class="btn btn-primary">Report an Incident</a>
+            <a href="#" class="btn btn-warning" id="emergency-btn">Emergency Alert</a>
+        </section>
+        
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📡</div>
+                <h3>Real-time Communication</h3>
+                <p>Connect instantly with emergency services and receive immediate updates on developing situations.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🗺️</div>
+                <h3>Interactive Mapping</h3>
+                <p>View affected areas, safe zones, and emergency resources on our interactive disaster mapping system.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile Accessibility</h3>
+                <p>Access critical information and report incidents from any device, anywhere, anytime.</p>
+            </div>
+        </section>
+        
+        <section class="dashboard" id="dashboard">
+            <div class="dashboard-header">
+                <h2 class="dashboard-title">Disaster Dashboard</h2>
+                <div class="dashboard-controls">
+                    <button class="btn btn-primary" id="refresh-btn">Refresh Data</button>
+                </div>
+            </div>
+            
+            <div class="status-grid">
+                <div class="status-card">
+                    <h4><span class="status-card-icon">🏥</span> Active Emergency Centers</h4>
+                    <p class="status-value">12 Centers Operational</p>
+                </div>
+                <div class="status-card danger">
+                    <h4><span class="status-card-icon">⚠️</span> Current Alerts</h4>
+                    <p class="status-value">3 Active Warnings</p>
+                </div>
+                <div class="status-card success">
+                    <h4><span class="status-card-icon">👥</span> Response Teams</h4>
+                    <p class="status-value">24 Teams Deployed</p>
+                </div>
+                <div class="status-card">
+                    <h4><span class="status-card-icon">📊</span> Resources Available</h4>
+                    <p class="status-value">78% Capacity</p>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <div class="map" id="disaster-map"></div>
+                <div class="map-overlay">
+                    <select id="map-filter">
+                        <option value="all">All Incidents</option>
+                        <option value="flood">Flood</option>
+                        <option value="fire">Fire</option>
+                        <option value="earthquake">Earthquake</option>
+                        <option value="storm">Storm</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        
+        <section class="incident-list" id="incidents">
+            <div class="incident-header">
+                <h2>Recent Incidents</h2>
+                <div>
+                    <select id="incident-filter">
+                        <option value="all">All Types</option>
+                        <option value="critical">Critical</option>
+                        <option value="warning">Warning</option>
+                        <option value="resolved">Resolved</option>
+                    </select>
+                </div>
+            </div>
+            <div class="incident-body" id="incident-list">
+                <!-- Incidents will be populated by JavaScript -->
+            </div>
+        </section>
+        
+        <section class="contact-form" id="report">
+            <h2>Report an Incident</h2>
+            <p>Help us respond quickly by reporting any emergency situations or potential hazards.</p>
+            <form id="incident-form">
+                <div class="form-group">
+                    <label for="incident-type">Incident Type</label>
+                    <select id="incident-type" required>
+                        <option value="">Select Incident Type</option>
+                        <option value="fire">Fire</option>
+                        <option value="flood">Flood</option>
+                        <option value="medical">Medical Emergency</option>
+                        <option value="weather">Severe Weather</option>
+                        <option value="infrastructure">Infrastructure Damage</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="Enter address or describe location" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="5" placeholder="Describe the incident in detail" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="contact-info">Your Contact Information</label>
+                    <input type="text" id="contact-info" placeholder="Phone number or email address">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Report</button>
+            </form>
+        </section>
+        
+        <section class="dashboard" id="resources">
+            <h2>Emergency Resources</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Preparedness Guides</h3>
+                    <p>Download emergency preparedness guides for different types of disasters.</p>
+                    <a href="#" class="btn btn-primary">Access Guides</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📞</div>
+                    <h3>Emergency Contacts</h3>
+                    <p>Find all essential emergency contact numbers organized by service type.</p>
+                    <a href="#" class="btn btn-primary">View Contacts</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏘️</div>
+                    <h3>Shelter Locations</h3>
+                    <p>Find the nearest emergency shelters and evacuation centers in your area.</p>
+                    <a href="#" class="btn btn-primary">Find Shelters</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="contact-form" id="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions or suggestions? Get in touch with our disaster management team.</p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Accessibility</a>
+                <a href="#">Volunteer</a>
+                <a href="#">Donate</a>
+            </div>
+            <p>&copy; 2025 Disaster Management and Communication System. All rights reserved.</p>
+            <p>For emergencies, please call: <strong>911</strong> or your local emergency number.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
